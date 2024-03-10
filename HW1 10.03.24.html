@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <title>HW1</title>
+    
+</head>
+<body>
+    
+
+    <script>
+	
+	var start = parseInt(prompt("Введите начало диапазона:"));
+var end = parseInt(prompt("Введите конец диапазона:"));
+var sum = 0;
+
+for (var i = start; i <= end; i++)
+ {
+  sum += i;
+}
+
+alert("Сумма чисел в диапазоне от " + start + " до " + end + " равна: " + sum);
+
+
+
+var num1 = parseInt(prompt("Введите первое число:"));
+var num2 = parseInt(prompt("Введите второе число:"));
+
+var nod = 1;
+
+for (var i = 1; i <= num1 && i <= num2; i++)
+ {
+  if (num1 % i === 0 && num2 % i === 0) 
+  {
+    nod = i;
+  }
+}
+
+alert("Наибольший общий делитель чисел " + num1 + " и " + num2 + " равен: " + nod);
+
+
+
+var number = parseInt(prompt("Введите число:"));
+
+alert("Делители числа " + number + ":");
+
+for (var i = 1; i <= number; i++) {
+  if (number % i === 0) {
+    alert(i);
+  }
+}
+
+
+
+
+var number = parseInt(prompt("Введите число:"));
+var count = 0;
+
+while (number !== 0) {
+  number = Math.floor(number / 10);
+  count++;
+}
+
+alert("Количество цифр в числе: " + count);
+
+
+
+var positiveCount = 0;
+var negativeCount = 0;
+var zeroCount = 0;
+var evenCount = 0;
+var oddCount = 0;
+
+for (var i = 1; i <= 10; i++) {
+  var number = parseInt(prompt("Введите число " + i + ":"));
+
+  if (number > 0) {
+    positiveCount++;
+  } else if (number < 0) {
+    negativeCount++;
+  } else {
+    zeroCount++;
+  }
+
+  if (number % 2 === 0) {
+    evenCount++;
+  } else {
+    oddCount++;
+  }
+}
+
+alert("Количество положительных чисел: " + positiveCount);
+alert("Количество отрицательных чисел: " + negativeCount);
+alert("Количество нулей: " + zeroCount);
+alert("Количество четных чисел: " + evenCount);
+alert("Количество нечетных чисел: " + oddCount);
+
+
+
+var calculate = true;
+
+while (calculate)
+ {
+  var num1 = parseFloat(prompt("Введите первое число:"));
+  var num2 = parseFloat(prompt("Введите второе число:"));
+  var operator = prompt("Введите знак операции (+, -, *, /):");
+  var result;
+
+  switch (operator) {
+    case "+":
+      result = num1 + num2;
+      break;
+    case "-":
+      result = num1 - num2;
+      break;
+    case "*":
+      result = num1 * num2;
+      break;
+    case "/":
+      result = num1 / num2;
+      break;
+    default:
+      alert("Неправильный знак операции");
+      continue;
+  }
+
+  alert("Результат: " + result);
+
+  var answer = prompt("Хотите решить еще один пример? (да/нет)");
+  if (answer.toLowerCase() !== "да") {
+    calculate = false;
+  }
+}
+
+
+
+var number = prompt("Введите число:");
+var shift = parseInt(prompt("Введите количество позиций для сдвига:"));
+
+var shiftedNumber = "";
+
+if(shift > 0) {
+    shiftedNumber = number.substring(shift) + number.substring(0, shift);   
+} else if(shift < 0) {
+    shift = Math.abs(shift);
+    shiftedNumber = number.substring(number.length - shift) + number.substring(0, number.length - shift);
+} else {
+    shiftedNumber = number;
+}
+
+alert("Сдвинутое число: " + shiftedNumber);
+
+
+
+var daysOfWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+var index = 0;
+
+do {
+  var answer = confirm(daysOfWeek[index] + ". Хотите увидеть следующий день?");
+  index = (index + 1) % 7;
+} while (answer);
+
+
+
+
+for (var i = 2; i <= 9; i++) {
+  alert("Таблица умножения для " + i + ":");
+
+  for (var j = 1; j <= 10; j++) {
+    var result = i * j;
+    alert(i + " * " + j + " = " + result);
+  }
+
+  alert("-----------------");
+}
+
+
+
+var min = 0;
+var max = 100;
+var guess;
+var answer;
+
+alert("Загадайте число от 0 до 100.");
+
+do {
+  guess = Math.floor((min + max) / 2); 
+  answer = prompt("Ваше число > " + guess + ", < " + guess + " или == " + guess + "? (>, <, ==)");
+
+  if (answer === ">") {
+    min = guess + 1; 
+  } else if (answer === "<") {
+    max = guess - 1; 
+  }
+} while (answer !== "==");
+
+alert("Ваше число: " + guess);
+
+
+ </script>
+</body>
+</html>
